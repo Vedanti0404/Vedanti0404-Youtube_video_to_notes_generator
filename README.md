@@ -1,5 +1,3 @@
-# Vedanti0404-Youtube_video_to_notes_generator
-
 # 🚀 Youtube_video_to_notes_generator: Transforming YouTube Lectures into Detailed Notes with AI 📚🤖
 
 ## Project Description
