@@ -18,7 +18,7 @@ Here's how it works:
 
 ## 💻 Coding
 
-The magic happens behind the scenes with Python code utilizing the YouTube Transcription API, Streamlit for the user interface, and the powerful Gemini Pro model for note generation. Check out the GitHub repo for all the code and dependencies: https://github.com/Vedanti0404/Vedanti0404-Youtube_video_to_notes_generator📦🔍
+The magic happens behind the scenes with Python code utilizing the YouTube Transcription API, Streamlit for the user interface, and the powerful Gemini Pro model for note generation. Check out the GitHub repo for all the code and dependencies: https://github.com/Vedanti0404/Vedanti0404-Youtube_video_to_notes_generator 📦🔍
 
 ## 🔥 Why It's Trending
 
