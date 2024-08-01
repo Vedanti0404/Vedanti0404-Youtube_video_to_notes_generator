@@ -1,8 +1,8 @@
-# 🚀 Youtube_video_to_notes_generator: Transforming YouTube Lectures into Detailed Notes with AI 📚🤖
+# 🚀 NoteBot: Transforming YouTube Lectures into Detailed Notes with AI 📚🤖
 
 ## Project Description
 
-Are you tired of spending hours transcribing YouTube lectures into detailed notes? Introducing the **Youtube_video_to_notes_generator** - your ultimate solution to convert YouTube video transcripts into comprehensive study materials effortlessly! 🎓✨
+Are you tired of spending hours transcribing YouTube lectures into detailed notes? Introducing the **NoteBot** - your ultimate solution to convert YouTube video transcripts into comprehensive study materials effortlessly! 🎓✨
 
 ## 🎯 Objective
 
