@@ -1,1 +1,27 @@
+Once you launch the AWS, linux or ubuntu instance follow these commands
 
+1. $ sudo apt update (update the terminal).
+2. $ sudo apt -get update
+3. $ sudo apt upgrade -y
+4. $ sudo apt install git curl unzip tar make sudo vim wget -y
+5. (copy paste the same command to verify if everything is installed or not).
+6. (cloning the repo of the project) copy the code link from github,
+7. $ git clone https://github.com/rohitspatil30/MCQ_generator_openAI_and_langchain.git
+8. $ ls
+9. $ cd MCQ_generator_openAI_and_langchain
+10. $ ls
+11. Now here the code won't run because the .env file does not get send to public instances, but we can create a file in the folder in the instance terminal itself.
+12. touch .env (creates a hidden file).
+13. ls -a (to view hidden file).
+14. $ vi .env (to open the file in vim editor).
+15. paste the openAI API key in the editor. 
+16. press esc key to save
+17. press :wq and hit enter to come out of the editor.
+18. $ cat .env (to view the contents of the .env file).
+19. $ sudo apt install python3-pip
+20. $ pip3 install openai langchain streamlit python-dotenv pyPDF2 pdfplumber
+21. $ python3 -m streamlit run streamlit_app.py
+22. The streamlit aap would be runnig on the port 8501. but this will still not run till we edit the inboud rules of the Instance address.
+click on instance ipaddress and then just click on security -> edit inboud rules -> add rule -> custome TCP -> write 8501 -> give source as 0.0.0.0/0 and save it.
+23. Rerun the code in step number 21. and copy the ip address of the instance and paste it in the format given below.
+ (ip.ADress):8501
