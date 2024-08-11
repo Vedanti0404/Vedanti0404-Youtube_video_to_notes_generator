@@ -1,21 +1,31 @@
-import streamlit as st
-import sqlite3
-import os
-from dotenv import load_dotenv
-import google.generativeai as genai
-from youtube_transcript import extract_transcript
+import streamlit as st # for ui
+import os# for environment variables
+from dotenv import load_dotenv # to load environment variables
+import google.generativeai as genai # to generate notes
+from youtube_transcript import extract_transcript # to extract transcript from youtube link
+from youtube_transcript_api import YouTubeTranscriptApi # to extract transcript from youtube link
 
-load_dotenv()
+load_dotenv() 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-def fetch_transcript(video_id):
-    conn = sqlite3.connect('youtube_transcripts.db')
-    c = conn.cursor()
-    c.execute("SELECT transcript FROM transcripts WHERE video_id = ?", (video_id,))
-    transcript_text = c.fetchone()[0]
-    conn.close()
-    return transcript_text
+def extract_transcript(youtube_video_url):
+    try:
+        video_id = youtube_video_url.split("=")[-1]
+        # here we are extracting transcript from youtube video by negative indexing till we find = in the url
+
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        # retrives the transcript for a single video from youtube_transcript_api
+        transcript_text = ""
+        for i in transcript:
+            transcript_text += " " + i["text"]
+        # here we are extracting the text from the transcript and concatenating them 
+
+        return transcript_text
+    except Exception as e:
+        # in case of any error we will print the error
+        print(f"Error extracting transcript: {e}")
+        return None
 
 
 def generate_notes(transcript_text, subject):
@@ -94,9 +104,9 @@ def generate_notes(transcript_text, subject):
             Please provide the YouTube video transcript, and I'll generate the detailed notes on Data Science and Statistics accordingly.
         """
 
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(prompt + transcript_text)
-    return response.text
+    model = genai.GenerativeModel('gemini-pro') # use the gemini pro model
+    response = model.generate_content(prompt + transcript_text) # generate the response based on the prompt and transcript 
+    return response.text # return the response 
 
 def main():
     st.title("YouTube Transcript to Detailed Notes Converter")
